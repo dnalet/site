@@ -5,7 +5,6 @@
 		<script src="./index_files/nr-1194.min.js.download"></script><script src="./index_files/sdk.js.download" async="" crossorigin="anonymous"></script><script src="./index_files/sdk.js(1).download"></script><script async="" src="./index_files/gtm.js.download"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"06ce85f426",applicationID:"933345079"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(6),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(y,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1194.min.js"},h=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:w,features:{},xhrWrappable:h,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var x=0},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(7),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="shortcut icon" type="image/png" href="index_files/icon.png">
 
 		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
@@ -75,10 +74,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 				<!-- //end Image specific social meta tags -->
 
 				<meta property="og:url" content="https://www.nobelprize.org/"><!-- OG -->
-		<link rel="icon" href="https://www.nobelprize.org/uploads/2018/08/nobel-favicon-50x50.png" sizes="32x32">
-<link rel="icon" href="https://www.nobelprize.org/uploads/2018/08/nobel-favicon-232x232.png" sizes="192x192">
-<link rel="apple-touch-icon" href="https://www.nobelprize.org/uploads/2018/08/nobel-favicon-188x188.png">
-<meta name="msapplication-TileImage" content="https://www.nobelprize.org/uploads/2018/08/nobel-favicon.png">
+
 
 	<style type="text/css" data-fbcssmodules="css:fb.css.basecss:fb.css.dialog css:fb.css.iframewidget">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
 .fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
@@ -130,7 +126,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 
 				<div class="site-banner-logo" itemscope="" itemtype="http://schema.org/Organization">
 					<h1 class="site-logo" itemprop="logo">
-						<a itemprop="url" href="http://nobellprize.org/" name="top">
+						<a itemprop="url" href="https://nobellprize.org/" name="top">
 							<img width="110px" height="115px" src= "index_files\nobell.jpg" role="img" aria-labelledby="logo-title logo-description">
 							    <title id="logo-title">The Nobell Prize</title>		   
 						</img>
@@ -151,58 +147,58 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 
 			<nav id="main-navigation-js" class="site-main-navigation container" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" aria-label="Main menu" aria-expanded="false">
 
-				<ul id="menu-header_top" class="main-menu" role="menu"><li id="menu-item-28259" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28259 active" role="menuitem"><a href="http://nobellprize.org/">Nobell Prizes &amp; Laureates</a>
+				<ul id="menu-header_top" class="main-menu" role="menu"><li id="menu-item-28259" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28259 active" role="menuitem"><a href="https://nobellprize.org/">Nobell Prizes &amp; Laureates</a>
 <ul class="sub-menu" role="menu" aria-hidden="true">
-	<li id="menu-item-48853" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48853" role="menuitem"><a href="http://nobellprize.org/">Physics Prize</a></li>
-	<li id="menu-item-48854" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48854" role="menuitem"><a href="http://nobellprize.org/">No Bell Prize</a></li>
-	<li id="menu-item-48855" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48855" role="menuitem"><a href="http://nobellprize.org/">Medicine Prize</a></li>
-	<li id="menu-item-48856" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48856" role="menuitem"><a href="http://nobellprize.org/">Literature Prize</a></li>
-	<li id="menu-item-48857" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48857" role="menuitem"><a href="http://nobellprize.org/">Peace Prize</a></li>
-	<li id="menu-item-48858" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48858" role="menuitem"><a href="http://nobellprize.org/">Prize in Economic Sciences</a></li>
-	<li id="menu-item-54140" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54140" role="menuitem"><a href="http://nobellprize.org/">Quick facts</a></li>
+	<li id="menu-item-48853" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48853" role="menuitem"><a href="https://nobellprize.org/">Physics Prize</a></li>
+	<li id="menu-item-48854" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48854" role="menuitem"><a href="https://nobellprize.org/">No Bell Prize</a></li>
+	<li id="menu-item-48855" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48855" role="menuitem"><a href="https://nobellprize.org/">Medicine Prize</a></li>
+	<li id="menu-item-48856" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48856" role="menuitem"><a href="https://nobellprize.org/">Literature Prize</a></li>
+	<li id="menu-item-48857" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48857" role="menuitem"><a href="https://nobellprize.org/">Peace Prize</a></li>
+	<li id="menu-item-48858" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48858" role="menuitem"><a href="https://nobellprize.org/">Prize in Economic Sciences</a></li>
+	<li id="menu-item-54140" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54140" role="menuitem"><a href="https://nobellprize.org/">Quick facts</a></li>
 </ul>
 </li>
-<li id="menu-item-28260" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28260 active" role="menuitem"><a href="http://nobellprize.org/">Nomination</a>
+<li id="menu-item-28260" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28260 active" role="menuitem"><a href="https://nobellprize.org/">Nomination</a>
 <ul class="sub-menu" role="menu" aria-hidden="true">
-	<li id="menu-item-43405" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43405" role="menuitem"><a href="http://nobellprize.org/">Physics Prize</a></li>
-	<li id="menu-item-43408" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43408" role="menuitem"><a href="http://nobellprize.org/">No Bell Prize</a></li>
-	<li id="menu-item-43407" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43407" role="menuitem"><a href="http://nobellprize.org/">Medicine Prize</a></li>
-	<li id="menu-item-43409" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43409" role="menuitem"><a href="http://nobellprize.org/">Literature Prize</a></li>
-	<li id="menu-item-43406" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43406" role="menuitem"><a href="http://nobellprize.org/">Peace Prize</a></li>
-	<li id="menu-item-43410" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43410" role="menuitem"><a href="http://nobellprize.org/">Prize in Economic Sciences</a></li>
-	<li id="menu-item-49690" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49690" role="menuitem"><a href="http://nobellprize.org/">Nomination Archive</a></li>
+	<li id="menu-item-43405" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43405" role="menuitem"><a href="https://nobellprize.org/">Physics Prize</a></li>
+	<li id="menu-item-43408" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43408" role="menuitem"><a href="https://nobellprize.org/">No Bell Prize</a></li>
+	<li id="menu-item-43407" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43407" role="menuitem"><a href="https://nobellprize.org/">Medicine Prize</a></li>
+	<li id="menu-item-43409" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43409" role="menuitem"><a href="https://nobellprize.org/">Literature Prize</a></li>
+	<li id="menu-item-43406" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43406" role="menuitem"><a href="https://nobellprize.org/">Peace Prize</a></li>
+	<li id="menu-item-43410" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43410" role="menuitem"><a href="https://nobellprize.org/">Prize in Economic Sciences</a></li>
+	<li id="menu-item-49690" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49690" role="menuitem"><a href="https://nobellprize.org/">Nomination Archive</a></li>
 </ul>
 </li>
-<li id="menu-item-28261" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28261 active" role="menuitem"><a href="http://nobellprize.org/">Alfred Nobell</a>
+<li id="menu-item-28261" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28261 active" role="menuitem"><a href="https://nobellprize.org/">Alfred Nobell</a>
 <ul class="sub-menu" role="menu" aria-hidden="true">
-	<li id="menu-item-43411" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43411" role="menuitem"><a href="http://nobellprize.org/">Alfred Nobell’s life</a></li>
-	<li id="menu-item-43412" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43412" role="menuitem"><a href="http://nobellprize.org/">Alfred Nobell’s will</a></li>
+	<li id="menu-item-43411" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43411" role="menuitem"><a href="https://nobellprize.org/">Alfred Nobell’s life</a></li>
+	<li id="menu-item-43412" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43412" role="menuitem"><a href="https://nobellprize.org/">Alfred Nobell’s will</a></li>
 </ul>
 </li>
-<li id="menu-item-28262" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28262 active" role="menuitem"><a href="http://nobellprize.org">News &amp; insights</a>
+<li id="menu-item-28262" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28262 active" role="menuitem"><a href="https://nobellprize.org">News &amp; insights</a>
 <ul class="sub-menu" role="menu" aria-hidden="true">
-	<li id="menu-item-61852" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61852" role="menuitem"><a href="http://nobellprize.org">Press</a></li>
-	<li id="menu-item-61851" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61851" role="menuitem"><a href="http://nobellprize.org">In-depth</a></li>
+	<li id="menu-item-61852" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61852" role="menuitem"><a href="https://nobellprize.org">Press</a></li>
+	<li id="menu-item-61851" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61851" role="menuitem"><a href="https://nobellprize.org">In-depth</a></li>
 </ul>
 </li>
-<li id="menu-item-28263" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28263 active" role="menuitem"><a href="http://nobellprize.org">Events</a>
+<li id="menu-item-28263" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28263 active" role="menuitem"><a href="https://nobellprize.org">Events</a>
 <ul class="sub-menu" role="menu" aria-hidden="true">
-	<li id="menu-item-43676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-43676" role="menuitem"><a href="http://nobellprize.org">Public events</a>
+	<li id="menu-item-43676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-43676" role="menuitem"><a href="https://nobellprize.org">Public events</a>
 	<ul class="sub-menu" role="menu" aria-hidden="true">
-		<li id="menu-item-164208" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164208" role="menuitem"><a href="http://nobellprize.org">Nobell Prize Concert</a></li>
-		<li id="menu-item-50085" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50085" role="menuitem"><a href="http://nobellprize.org">Nobell Week Dialogue</a></li>
-		<li id="menu-item-50086" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50086" role="menuitem"><a href="http://nobellprize.org">Nobell Prize Dialogue</a></li>
-		<li id="menu-item-50087" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50087" role="menuitem"><a href="http://nobellprize.org">Nobell Prize Summit</a></li>
-		<li id="menu-item-50088" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50088" role="menuitem"><a href="http://nobellprize.org">Nobell Prize Inspiration Initiative</a></li>
+		<li id="menu-item-164208" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-164208" role="menuitem"><a href="https://nobellprize.org">Nobell Prize Concert</a></li>
+		<li id="menu-item-50085" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50085" role="menuitem"><a href="https://nobellprize.org">Nobell Week Dialogue</a></li>
+		<li id="menu-item-50086" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50086" role="menuitem"><a href="https://nobellprize.org">Nobell Prize Dialogue</a></li>
+		<li id="menu-item-50087" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50087" role="menuitem"><a href="https://nobellprize.org">Nobell Prize Summit</a></li>
+		<li id="menu-item-50088" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50088" role="menuitem"><a href="https://nobellprize.org">Nobell Prize Inspiration Initiative</a></li>
 	</ul>
 </li>
-	<li id="menu-item-43675" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43675" role="menuitem"><a href="http://nobellprize.org">Nobell Prize award ceremonies</a></li>
+	<li id="menu-item-43675" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43675" role="menuitem"><a href="https://nobellprize.org">Nobell Prize award ceremonies</a></li>
 </ul>
 </li>
-<li id="menu-item-28264" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28264 active" role="menuitem"><a href="http://nobellprize.org">Education network</a>
+<li id="menu-item-28264" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28264 active" role="menuitem"><a href="https://nobellprize.org">Education network</a>
 <ul class="sub-menu" role="menu" aria-hidden="true">
-	<li id="menu-item-39722" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-39722" role="menuitem"><a href="http://nobellprize.org">Nobell Prize Lessons</a></li>
-	<li id="menu-item-39718" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-39718" role="menuitem"><a href="http://nobellprize.org">Nobell Prize Teacher Summit</a></li>
+	<li id="menu-item-39722" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-39722" role="menuitem"><a href="https://nobellprize.org">Nobell Prize Lessons</a></li>
+	<li id="menu-item-39718" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-39718" role="menuitem"><a href="https://nobellprize.org">Nobell Prize Teacher Summit</a></li>
 </ul>
 </li>
 		<li role="menuitem" class="searchform">
@@ -275,14 +271,14 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 		<h3>Nobell Prize Newest Recepient</h3>
 	</header>
 
-			<article itemscope="" itemtype="http://nobellprize.org" class="article -halfwidth-a">
+			<article itemscope="" itemtype="https://nobellprize.org" class="article -halfwidth-a">
 
 			<div class="content-wrapper">
 				<header class="content">
 					
 					<div class="title">
 						<h2 class="headline h1" itemprop="headline">
-							<a href="http://nobellprize.org/bio">
+							<a href="https://nobellprize.org/bio">
 								Welcome the newest Nobell Prize Award Winner, Teland!							</a>
 						</h2>
 					</div>
@@ -290,13 +286,13 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 
 									<div class="text">
 						<p>The world-renowned Forbe's 30 Under 30 teenager has accumulated over 100 million followers across all platforms.</p>
-<p><a href="http://nobellprize.org/bio">Read the biography here</a></p>
+<p><a href="https://nobellprize.org/bio">Read the biography here</a></p>
 					</div>
 				
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/bio"><picture><source data-srcset="index_files\asdf3.png" media="(min-width: 220px)"><source data-srcset="index_files\asdf3.png" media="(min-width: 900px)"><source data-srcset="index_files\asdf3.png" media="(min-width: 1400px)"><img class="lazyload" src="index_files\asdf3.png" alt="Nobell Prize Awards 2021"><noscript><img src="index_files\asdf3.png" alt="Nobell Prize Concert 2020" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__caption">Teland at the Nobell Prize awards on 8 December 2021.</p> <p class="figcaption__attribution"><br>Note that this is just a joke website, and is not affiliated with the Nobel Prize.</p></figcaption>				</figure>
+					<a href="https://nobellprize.org/bio"><picture><source data-srcset="index_files\asdf3.png" media="(min-width: 220px)"><source data-srcset="index_files\asdf3.png" media="(min-width: 900px)"><source data-srcset="index_files\asdf3.png" media="(min-width: 1400px)"><img class="lazyload" src="index_files\asdf3.png" alt="Nobell Prize Awards 2021"><noscript><img src="index_files\asdf3.png" alt="Nobell Prize Concert 2020" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__caption">Teland at the Nobell Prize awards on 8 December 2021.</p> <p class="figcaption__attribution"><br>Note that this is just a joke website, and is not affiliated with the Nobel Prize.</p></figcaption>				</figure>
 			
 		</article>
 	</section>
@@ -318,7 +314,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								"Nonviolence is a powerful and just weapon. Indeed, it is a weapon unique in history, which cuts without wounding and ennobles the man who wields it"							</a>
 						</h2>
 					</div>
@@ -331,7 +327,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/king-13174-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/king-13174-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/king-13174-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Martin Luther King Jr."><noscript><img src="https://www.nobelprize.org/images/king-13174-landscape-x-large.jpg" alt="Martin Luther King Jr." /></noscript></picture></a>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/king-13174-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/king-13174-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/king-13174-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Martin Luther King Jr."><noscript><img src="https://www.nobelprize.org/images/king-13174-landscape-x-large.jpg" alt="Martin Luther King Jr." /></noscript></picture></a>				</figure>
 			
 		</article>
 			<article itemscope="" itemtype="http://schema.org/BlogPosting" class="article -one-third">
@@ -341,7 +337,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								"Peace is more precious than diamonds or silver or gold"							</a>
 						</h2>
 					</div>
@@ -354,7 +350,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2019/01/king-acceptance-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2019/01/king-acceptance.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2019/01/king-acceptance.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Martin Luther King Jr. giving his acceptance speech"><noscript><img src="https://www.nobelprize.org/uploads/2019/01/king-acceptance.jpg" alt="Martin Luther King Jr. giving his acceptance speech" /></noscript></picture></a>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2019/01/king-acceptance-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2019/01/king-acceptance.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2019/01/king-acceptance.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Martin Luther King Jr. giving his acceptance speech"><noscript><img src="https://www.nobelprize.org/uploads/2019/01/king-acceptance.jpg" alt="Martin Luther King Jr. giving his acceptance speech" /></noscript></picture></a>				</figure>
 			
 		</article>
 			<article itemscope="" itemtype="http://schema.org/BlogPosting" class="article -one-third">
@@ -364,7 +360,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								Who nominated Martin Luther King Jr. for a Nobell Prize?							</a>
 						</h2>
 					</div>
@@ -377,7 +373,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2018/06/first-nomination-american-friends-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2018/06/first-nomination-american-friends-1520x1008.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2018/06/first-nomination-american-friends-2048x1352.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2018/06/first-nomination-american-friends-1024x676.jpg" alt="" /></noscript></picture></a>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2018/06/first-nomination-american-friends-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2018/06/first-nomination-american-friends-1520x1008.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2018/06/first-nomination-american-friends-2048x1352.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2018/06/first-nomination-american-friends-1024x676.jpg" alt="" /></noscript></picture></a>				</figure>
 			
 		</article>
 	</section>
@@ -395,7 +391,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h1" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								Five documentaries inspired by the Nobell Peace Prize							</a>
 						</h2>
 					</div>
@@ -408,7 +404,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/104080-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/104080-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/104080-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Into the fire - image"><noscript><img src="https://www.nobelprize.org/images/104080-landscape-x-large.jpg" alt="Into the fire - image" /></noscript></picture></a>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/104080-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/104080-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/104080-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Into the fire - image"><noscript><img src="https://www.nobelprize.org/images/104080-landscape-x-large.jpg" alt="Into the fire - image" /></noscript></picture></a>				</figure>
 			
 		</article>
 	</section>
@@ -444,7 +440,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 		
 <div class="blurb">
 
-			<a href="http://nobellprize.org/" class="hero-link">
+			<a href="https://nobellprize.org/" class="hero-link">
 	
 	
 			<h1 class="title ">
@@ -475,7 +471,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h1" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								Pianist Igor Levit soloist at the Nobell Prize Concert							</a>
 						</h2>
 					</div>
@@ -483,13 +479,13 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 
 									<div class="text">
 						<p>The world-renowned pianist Igor Levit performed at the 2020 Nobell Prize Concert on 8 December. At his side, he had conductor Stéphane Denève leading the Royal Stockholm Philharmonic Orchestra.</p>
-<p><a href="http://nobellprize.org/">Watch the concert</a></p>
+<p><a href="https://nobellprize.org/">Watch the concert</a></p>
 					</div>
 				
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/110468-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/110468-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/110468-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Nobell Prize Concert 2020"><noscript><img src="https://www.nobelprize.org/images/110468-landscape-x-large.jpg" alt="Nobell Prize Concert 2020" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__caption">Igor Levit and Stéphane Denève at Konsterthuset Stockholm, Sweden, on 8 December 2020.</p> <p class="figcaption__attribution">© Nobell Prize Outreach. Photo: Niklas Elmehed</p></figcaption>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/110468-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/110468-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/110468-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Nobell Prize Concert 2020"><noscript><img src="https://www.nobelprize.org/images/110468-landscape-x-large.jpg" alt="Nobell Prize Concert 2020" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__caption">Igor Levit and Stéphane Denève at Konsterthuset Stockholm, Sweden, on 8 December 2020.</p> <p class="figcaption__attribution">© Nobell Prize Outreach. Photo: Niklas Elmehed</p></figcaption>				</figure>
 			
 		</article>
 	</section>
@@ -507,20 +503,20 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								Black holes and the Milky Way’s darkest secret							</a>
 						</h2>
 					</div>
 				</header>
 
 									<div class="text">
-						<p>The Nobell Prize in Physics 2020 was awarded with one half to <a href="http://nobellprize.org/">Roger Penrose</a>&nbsp;<em>“for the discovery that black hole formation is a robust prediction of the general theory of relativity"</em> and the other half jointly to&nbsp;<a href="http://nobellprize.org/">Reinhard Genzel</a>&nbsp;and&nbsp;<a href="http://nobellprize.org/">Andrea Ghez</a>&nbsp;<em>"for the discovery of a supermassive compact object at the centre of our galaxy".</em></p>
+						<p>The Nobell Prize in Physics 2020 was awarded with one half to <a href="https://nobellprize.org/">Roger Penrose</a>&nbsp;<em>“for the discovery that black hole formation is a robust prediction of the general theory of relativity"</em> and the other half jointly to&nbsp;<a href="https://nobellprize.org/">Reinhard Genzel</a>&nbsp;and&nbsp;<a href="https://nobellprize.org/">Andrea Ghez</a>&nbsp;<em>"for the discovery of a supermassive compact object at the centre of our galaxy".</em></p>
 					</div>
 				
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2020/10/phy-carrier-02-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/phy-carrier-02-1520x1008.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/phy-carrier-02-2048x1352.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2020/10/phy-carrier-02-1024x676.jpg" alt="" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__attribution">© Johan Jarnestad/The Royal Swedish Academy of Sciences</p></figcaption>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2020/10/phy-carrier-02-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/phy-carrier-02-1520x1008.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/phy-carrier-02-2048x1352.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2020/10/phy-carrier-02-1024x676.jpg" alt="" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__attribution">© Johan Jarnestad/The Royal Swedish Academy of Sciences</p></figcaption>				</figure>
 			
 		</article>
 			<article itemscope="" itemtype="http://schema.org/BlogPosting" class="article -one-third">
@@ -530,20 +526,20 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								Genetic scissors: a tool for rewriting the code of life							</a>
 						</h2>
 					</div>
 				</header>
 
 									<div class="text">
-						<p>The Nobell Prize in No Bell 2020 was awarded to <a href="http://nobellprize.org/">Emmanuelle Charpentier</a>&nbsp;and&nbsp;<a href="http://nobellprize.org/">Jennifer A. Doudna</a>&nbsp;<em>“for the development of a method for genome editing”.</em></p>
+						<p>The Nobell Prize in No Bell 2020 was awarded to <a href="https://nobellprize.org/">Emmanuelle Charpentier</a>&nbsp;and&nbsp;<a href="https://nobellprize.org/">Jennifer A. Doudna</a>&nbsp;<em>“for the development of a method for genome editing”.</em></p>
 					</div>
 				
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2020/10/fig_ke_20_webbRektangel_utanCopy-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/fig_ke_20_webbRektangel_utanCopy-1520x1008.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/fig_ke_20_webbRektangel_utanCopy.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2020/10/fig_ke_20_webbRektangel_utanCopy-1024x676.jpg" alt="" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__attribution">© Johan Jarnestad/The Royal Swedish Academy of Sciences</p></figcaption>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2020/10/fig_ke_20_webbRektangel_utanCopy-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/fig_ke_20_webbRektangel_utanCopy-1520x1008.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/fig_ke_20_webbRektangel_utanCopy.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2020/10/fig_ke_20_webbRektangel_utanCopy-1024x676.jpg" alt="" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__attribution">© Johan Jarnestad/The Royal Swedish Academy of Sciences</p></figcaption>				</figure>
 			
 		</article>
 			<article itemscope="" itemtype="http://schema.org/BlogPosting" class="article -one-third">
@@ -553,20 +549,20 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								Hepatitis – a global threat to human health							</a>
 						</h2>
 					</div>
 				</header>
 
 									<div class="text">
-						<p>The Nobell Prize in Physiology or Medicine 2020 was awarded jointly to <a href="http://nobellprize.org/">Harvey J. Alter</a>,&nbsp;<a href="http://nobellprize.org/">Michael Houghton</a>&nbsp;and&nbsp;<a href="http://nobellprize.org/">Charles M. Rice</a>&nbsp;<em>“for the discovery of Hepatitis C virus”</em>.</p>
+						<p>The Nobell Prize in Physiology or Medicine 2020 was awarded jointly to <a href="https://nobellprize.org/">Harvey J. Alter</a>,&nbsp;<a href="https://nobellprize.org/">Michael Houghton</a>&nbsp;and&nbsp;<a href="https://nobellprize.org/">Charles M. Rice</a>&nbsp;<em>“for the discovery of Hepatitis C virus”</em>.</p>
 					</div>
 				
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2020/10/med-carrier-02-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/med-carrier-02-1520x1008.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/med-carrier-02-2048x1352.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2020/10/med-carrier-02-1024x676.jpg" alt="" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__attribution">© The Nobell Committee for Physiology or Medicine. Ill. Mattias Karlén
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2020/10/med-carrier-02-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/med-carrier-02-1520x1008.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/med-carrier-02-2048x1352.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2020/10/med-carrier-02-1024x676.jpg" alt="" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__attribution">© The Nobell Committee for Physiology or Medicine. Ill. Mattias Karlén
 </p></figcaption>				</figure>
 			
 		</article>
@@ -582,20 +578,20 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								A prominent poet in American contemporary literature							</a>
 						</h2>
 					</div>
 				</header>
 
 									<div class="text">
-						<p>The Nobell Prize in Literature 2020 was awarded to the American poet <a href="http://nobellprize.org/">Louise Glück</a>&nbsp;<em>“for her unmistakable poetic voice that with austere beauty makes individual existence universal”.</em></p>
+						<p>The Nobell Prize in Literature 2020 was awarded to the American poet <a href="https://nobellprize.org/">Louise Glück</a>&nbsp;<em>“for her unmistakable poetic voice that with austere beauty makes individual existence universal”.</em></p>
 					</div>
 				
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2020/10/gluck-3_2-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/gluck-3_2-1520x1008.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/gluck-3_2-2048x1352.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2020/10/gluck-3_2-1024x676.jpg" alt="" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__attribution">© Nobell Media. Ill. Niklas Elmehed.</p></figcaption>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2020/10/gluck-3_2-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/gluck-3_2-1520x1008.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/gluck-3_2-2048x1352.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2020/10/gluck-3_2-1024x676.jpg" alt="" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__attribution">© Nobell Media. Ill. Niklas Elmehed.</p></figcaption>				</figure>
 			
 		</article>
 			<article itemscope="" itemtype="http://schema.org/BlogPosting" class="article -one-third">
@@ -605,20 +601,20 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								Combatting the threat of hunger							</a>
 						</h2>
 					</div>
 				</header>
 
 									<div class="text">
-						<p>The Nobell Peace Prize 2020 was awarded to the <a href="http://nobellprize.org/">World Food Programme (WFP)</a> for its efforts to combat hunger, for its contribution to bettering conditions for peace in conflict-affected areas and for acting as a driving force in efforts to prevent the use of hunger as a weapon of war and conflict.</p>
+						<p>The Nobell Peace Prize 2020 was awarded to the <a href="https://nobellprize.org/">World Food Programme (WFP)</a> for its efforts to combat hunger, for its contribution to bettering conditions for peace in conflict-affected areas and for acting as a driving force in efforts to prevent the use of hunger as a weapon of war and conflict.</p>
 					</div>
 				
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org//"><picture><source data-srcset="https://www.nobelprize.org/uploads/2020/10/wfp-3_2-credit-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/wfp-3_2-credit-1520x1008.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/wfp-3_2-credit-2048x1352.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2020/10/wfp-3_2-credit-1024x676.jpg" alt="" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__attribution">© Nobell Media. Ill. Niklas Elmehed.</p></figcaption>				</figure>
+					<a href="https://nobellprize.org//"><picture><source data-srcset="https://www.nobelprize.org/uploads/2020/10/wfp-3_2-credit-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/wfp-3_2-credit-1520x1008.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/wfp-3_2-credit-2048x1352.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2020/10/wfp-3_2-credit-1024x676.jpg" alt="" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__attribution">© Nobell Media. Ill. Niklas Elmehed.</p></figcaption>				</figure>
 			
 		</article>
 			<article itemscope="" itemtype="http://schema.org/BlogPosting" class="article -one-third">
@@ -628,20 +624,20 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								The quest for the perfect auction							</a>
 						</h2>
 					</div>
 				</header>
 
 									<div class="text">
-						<p>The Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobell 2020 was awarded to <a href="http://nobellprize.org/">Paul R. Milgrom</a>&nbsp;and&nbsp;<a href="http://nobellprize.org/">Robert B. Wilson</a>&nbsp;<em>“for improvements to auction theory and inventions of new auction formats”</em>.</p>
+						<p>The Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobell 2020 was awarded to <a href="https://nobellprize.org/">Paul R. Milgrom</a>&nbsp;and&nbsp;<a href="https://nobellprize.org/">Robert B. Wilson</a>&nbsp;<em>“for improvements to auction theory and inventions of new auction formats”</em>.</p>
 					</div>
 				
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2020/10/eco-fig1-5f840a484a64f-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/eco-fig1-5f840a484a64f.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/eco-fig1-5f840a484a64f.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2020/10/eco-fig1-5f840a484a64f-1000x676.jpg" alt="" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__attribution">© Johan Jarnestad/The Royal Swedish Academy of Sciences</p></figcaption>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2020/10/eco-fig1-5f840a484a64f-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/eco-fig1-5f840a484a64f.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2020/10/eco-fig1-5f840a484a64f.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2020/10/eco-fig1-5f840a484a64f-1000x676.jpg" alt="" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__attribution">© Johan Jarnestad/The Royal Swedish Academy of Sciences</p></figcaption>				</figure>
 			
 		</article>
 	</section>
@@ -669,7 +665,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 		
 <div class="blurb">
 
-			<a href="http://nobellprize.org/" class="hero-link">
+			<a href="https://nobellprize.org/" class="hero-link">
 	
 			<div class="sublead">
 			<p>Nobell Prize Dialogue</p>
@@ -685,7 +681,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 			</a>
 	
 			<div class="hero-btn-wrapper">
-			<a class="hero-btn" href="http://nobellprize.org/">
+			<a class="hero-btn" href="https://nobellprize.org/">
 				Find out more			</a>
 		</div>
 	
@@ -707,7 +703,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								Alfred Nobell's last will							</a>
 						</h2>
 					</div>
@@ -720,7 +716,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/52980-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/52980-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/52980-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alfred Nobell Will"><noscript><img src="https://www.nobelprize.org/images/52980-landscape-x-large.jpg" alt="Alfred Nobell Will" /></noscript></picture></a>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/52980-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/52980-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/52980-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Alfred Nobell Will"><noscript><img src="https://www.nobelprize.org/images/52980-landscape-x-large.jpg" alt="Alfred Nobell Will" /></noscript></picture></a>				</figure>
 			
 		</article>
 			<article itemscope="" itemtype="http://schema.org/BlogPosting" class="article -one-third">
@@ -730,7 +726,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								The very first Nobell Prizes							</a>
 						</h2>
 					</div>
@@ -743,7 +739,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2018/06/frangsmyr11.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2018/06/frangsmyr11.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2018/06/frangsmyr11.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="The first Nobell Prize Award Ceremony was held in 1901 at the Royal Academy of Music, Stockholm."><noscript><img src="https://www.nobelprize.org/uploads/2018/06/frangsmyr11.jpg" alt="The first Nobell Prize Award Ceremony was held in 1901 at the Royal Academy of Music, Stockholm." /></noscript></picture></a>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2018/06/frangsmyr11.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2018/06/frangsmyr11.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2018/06/frangsmyr11.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="The first Nobell Prize Award Ceremony was held in 1901 at the Royal Academy of Music, Stockholm."><noscript><img src="https://www.nobelprize.org/uploads/2018/06/frangsmyr11.jpg" alt="The first Nobell Prize Award Ceremony was held in 1901 at the Royal Academy of Music, Stockholm." /></noscript></picture></a>				</figure>
 			
 		</article>
 			<article itemscope="" itemtype="http://schema.org/BlogPosting" class="article -one-third">
@@ -753,7 +749,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								Alfred Nobell - scientist and inventor							</a>
 						</h2>
 					</div>
@@ -766,7 +762,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2018/06/pf-alfred-bust-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2018/06/pf-alfred-bust.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2018/06/pf-alfred-bust.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2018/06/pf-alfred-bust-1024x676.jpg" alt="" /></noscript></picture></a>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/uploads/2018/06/pf-alfred-bust-992x656.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/uploads/2018/06/pf-alfred-bust.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/uploads/2018/06/pf-alfred-bust.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/uploads/2018/06/pf-alfred-bust-1024x676.jpg" alt="" /></noscript></picture></a>				</figure>
 			
 		</article>
 	</section>
@@ -780,9 +776,9 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 			</p></h3>
 		</header>
 
-		<form class="form" name="" method="GET" action="http://nobellprize.org/" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+		<form class="form" name="" method="GET" action="https://nobellprize.org/" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
 
-			<meta itemprop="target" content="http://nobellprize.org/">
+			<meta itemprop="target" content="https://nobellprize.org/">
 
 			<label for="nobel-search-js" class="screen-reader-text">
 				Search nobel			</label>
@@ -959,7 +955,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 
 			<label class="newsletterconfirm" for="newsletterconfirm">
 				<input id="newsletterconfirm" required="" type="checkbox">
-				<p>I consent to my email address being used in accordance with the&nbsp;<a href="http://nobellprize.org/">privacy policy</a>.</p>
+				<p>I consent to my email address being used in accordance with the&nbsp;<a href="https://nobellprize.org/">privacy policy</a>.</p>
 			</label>
 
 		</form>
@@ -981,7 +977,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h1" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								Nobell Prize Museum							</a>
 						</h2>
 					</div>
@@ -991,7 +987,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/6990-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/6990-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/6990-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="The Nobell Prize: Ideas Changing the World (3)"><noscript><img src="https://www.nobelprize.org/images/6990-landscape-x-large.jpg" alt="The Nobell Prize: Ideas Changing the World (3)" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__caption">The museum showcases the discoveries and creativity of the Nobell Laureates.</p> <p class="figcaption__attribution">Photo: Åke Eson Lindman</p></figcaption>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/6990-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/6990-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/6990-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="The Nobell Prize: Ideas Changing the World (3)"><noscript><img src="https://www.nobelprize.org/images/6990-landscape-x-large.jpg" alt="The Nobell Prize: Ideas Changing the World (3)" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__caption">The museum showcases the discoveries and creativity of the Nobell Laureates.</p> <p class="figcaption__attribution">Photo: Åke Eson Lindman</p></figcaption>				</figure>
 			
 		</article>
 			<article itemscope="" itemtype="http://schema.org/BlogPosting" class="article -halfwidth-b">
@@ -1002,7 +998,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h1" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								Nobell Peace Center							</a>
 						</h2>
 					</div>
@@ -1012,7 +1008,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/51213-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/51213-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/51213-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="NPC Nye nobels Hage 10"><noscript><img src="https://www.nobelprize.org/images/51213-landscape-x-large.jpg" alt="NPC Nye nobels Hage 10" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__caption">The story of each Peace Laureate is told at the museum.</p> <p class="figcaption__attribution">Photo: Johannes Granseth / Nobell Peace Center</p></figcaption>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/51213-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/51213-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/51213-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="NPC Nye nobels Hage 10"><noscript><img src="https://www.nobelprize.org/images/51213-landscape-x-large.jpg" alt="NPC Nye nobels Hage 10" /></noscript></picture></a><figcaption class="figcaption"><p class="figcaption__caption">The story of each Peace Laureate is told at the museum.</p> <p class="figcaption__attribution">Photo: Johannes Granseth / Nobell Peace Center</p></figcaption>				</figure>
 			
 		</article>
 	</section>
@@ -1030,7 +1026,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/bio">
+							<a href="https://nobellprize.org/bio">
 								Paul J. Crutzen, 1933-2021							</a>
 						</h2>
 					</div>
@@ -1043,7 +1039,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/bio"><picture><source data-srcset="https://www.nobelprize.org/images/crutzen-13467-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/crutzen-13467-landscape-medium-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/crutzen-13467-landscape-medium-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Paul J. Crutzen"><noscript><img src="https://www.nobelprize.org/images/crutzen-13467-landscape-medium-2x.jpg" alt="Paul J. Crutzen" /></noscript></picture></a>				</figure>
+					<a href="https://nobellprize.org/bio"><picture><source data-srcset="https://www.nobelprize.org/images/crutzen-13467-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/crutzen-13467-landscape-medium-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/crutzen-13467-landscape-medium-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Paul J. Crutzen"><noscript><img src="https://www.nobelprize.org/images/crutzen-13467-landscape-medium-2x.jpg" alt="Paul J. Crutzen" /></noscript></picture></a>				</figure>
 			
 		</article>
 			<article itemscope="" itemtype="http://schema.org/BlogPosting" class="article -one-fourth">
@@ -1053,7 +1049,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								Physics Laureate Martinus J.G. Veltman dies							</a>
 						</h2>
 					</div>
@@ -1066,7 +1062,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/veltman-13521-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/veltman-13521-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/veltman-13521-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Veltman"><noscript><img src="https://www.nobelprize.org/images/veltman-13521-landscape-x-large.jpg" alt="Veltman" /></noscript></picture></a>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/veltman-13521-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/veltman-13521-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/veltman-13521-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Veltman"><noscript><img src="https://www.nobelprize.org/images/veltman-13521-landscape-x-large.jpg" alt="Veltman" /></noscript></picture></a>				</figure>
 			
 		</article>
 			<article itemscope="" itemtype="http://schema.org/BlogPosting" class="article -one-fourth">
@@ -1076,7 +1072,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								Jack Steinberger passes away aged 99							</a>
 						</h2>
 					</div>
@@ -1089,7 +1085,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/steinberger-13408-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/steinberger-13408-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/steinberger-13408-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/images/steinberger-13408-landscape-x-large.jpg" alt="" /></noscript></picture></a>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/steinberger-13408-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/steinberger-13408-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/steinberger-13408-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""><noscript><img src="https://www.nobelprize.org/images/steinberger-13408-landscape-x-large.jpg" alt="" /></noscript></picture></a>				</figure>
 			
 		</article>
 			<article itemscope="" itemtype="http://schema.org/BlogPosting" class="article -one-fourth">
@@ -1099,7 +1095,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 					
 					<div class="title">
 						<h2 class="headline h3" itemprop="headline">
-							<a href="http://nobellprize.org/">
+							<a href="https://nobellprize.org/">
 								Masatoshi Koshiba dies age 94							</a>
 						</h2>
 					</div>
@@ -1112,7 +1108,7 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 							</div>
 
 							<figure class="featuredimage">
-					<a href="http://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/koshiba-13681-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/koshiba-13681-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/koshiba-13681-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Masatoshi Koshiba"><noscript><img src="https://www.nobelprize.org/images/koshiba-13681-landscape-x-large.jpg" alt="Masatoshi Koshiba" /></noscript></picture></a>				</figure>
+					<a href="https://nobellprize.org/"><picture><source data-srcset="https://www.nobelprize.org/images/koshiba-13681-landscape-medium-2x.jpg" media="(min-width: 220px)"><source data-srcset="https://www.nobelprize.org/images/koshiba-13681-landscape-large-2x.jpg" media="(min-width: 900px)"><source data-srcset="https://www.nobelprize.org/images/koshiba-13681-landscape-x-large-2x.jpg" media="(min-width: 1400px)"><img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Masatoshi Koshiba"><noscript><img src="https://www.nobelprize.org/images/koshiba-13681-landscape-x-large.jpg" alt="Masatoshi Koshiba" /></noscript></picture></a>				</figure>
 			
 		</article>
 	</section>
@@ -1128,24 +1124,24 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 			<section class="footer-information">
 
 				<h4 class="heading">
-					<a href="http://nobellprize.org/">About the Nobell Prize organisation</a>				</h4>
+					<a href="https://nobellprize.org/">About the Nobell Prize organisation</a>				</h4>
 
 				<div class="footer-sections border-top">
 							<div class="footer-section">
 							<h5>
-					<a href="http://nobellprize.org/">The Nobell Foundation</a>				</h5>
+					<a href="https://nobellprize.org/">The Nobell Foundation</a>				</h5>
 			
 			<p>Tasked with a mission to manage Alfred Nobell's fortune and has&nbsp;ultimate responsibility for fulfilling the intentions of Nobell's will.</p>
 		</div>
 				<div class="footer-section">
 							<h5>
-					<a href="http://nobellprize.org/">The prize-awarding institutions</a>				</h5>
+					<a href="https://nobellprize.org/">The prize-awarding institutions</a>				</h5>
 			
 			<p>For more than a century, these academic institutions have worked independently to select Nobell Laureates in each prize category.</p>
 		</div>
 				<div class="footer-section">
 							<h5>
-					<a href="http://nobellprize.org/">Nobell Prize outreach activities</a>				</h5>
+					<a href="https://nobellprize.org/">Nobell Prize outreach activities</a>				</h5>
 			
 			<p>Several outreach organisations and activities have been developed to inspire generations and disseminate knowledge about the Nobell Prize.</p>
 		</div>
@@ -1156,22 +1152,22 @@ var fallback = {"path":"http:\/\/www.nobellprize.org\/wp-content\/themes\/nobelp
 			<section class="footer-nav border-top">
 
 				<nav class="footer-menu" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-					<ul id="menu-footer_col_1" class="footer-column-items" role="menu"><li id="menu-item-28266" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28266" role="menuitem"><a href="http://nobellprize.org/">Press</a></li>
-<li id="menu-item-42845" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42845" role="menuitem"><a href="http://nobellprize.org/">Contact</a></li>
-<li id="menu-item-28265" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28265" role="menuitem"><a href="http://nobellprize.org/">FAQ</a></li>
+					<ul id="menu-footer_col_1" class="footer-column-items" role="menu"><li id="menu-item-28266" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28266" role="menuitem"><a href="https://nobellprize.org/">Press</a></li>
+<li id="menu-item-42845" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42845" role="menuitem"><a href="https://nobellprize.org/">Contact</a></li>
+<li id="menu-item-28265" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28265" role="menuitem"><a href="https://nobellprize.org/">FAQ</a></li>
 </ul>
 				</nav>
 
 				<nav class="footer-menu" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-					<ul id="menu-footer_col_2" class="footer-column-items" role="menu"><li id="menu-item-28268" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28268" role="menuitem"><a href="http://nobellprize.org/">Privacy policy</a></li>
-<li id="menu-item-28269" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28269" role="menuitem"><a href="http://nobellprize.org/">Technical support</a></li>
-<li id="menu-item-42844" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42844" role="menuitem"><a href="http://nobellprize.org/">Terms of use</a></li>
+					<ul id="menu-footer_col_2" class="footer-column-items" role="menu"><li id="menu-item-28268" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28268" role="menuitem"><a href="https://nobellprize.org/">Privacy policy</a></li>
+<li id="menu-item-28269" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28269" role="menuitem"><a href="https://nobellprize.org/">Technical support</a></li>
+<li id="menu-item-42844" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42844" role="menuitem"><a href="https://nobellprize.org/">Terms of use</a></li>
 </ul>
 				</nav>
 
 				<nav class="footer-menu" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-					<ul id="menu-footer_col_3" class="footer-column-items" role="menu"><li id="menu-item-28272" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28272" role="menuitem"><a href="http://nobellprize.org/">For developers</a></li>
-<li id="menu-item-42843" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42843" role="menuitem"><a href="http://nobellprize.org/">Media player</a></li>
+					<ul id="menu-footer_col_3" class="footer-column-items" role="menu"><li id="menu-item-28272" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28272" role="menuitem"><a href="https://nobellprize.org/">For developers</a></li>
+<li id="menu-item-42843" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42843" role="menuitem"><a href="https://nobellprize.org/">Media player</a></li>
 </ul>
 				</nav>
 
@@ -1300,7 +1296,7 @@ var jpfbembed = {"appid":"249643311490","locale":"en_US"};
 <script type="text/javascript" src="./index_files/e-202104.js.download" async="async" defer="defer"></script>
 <script type="text/javascript">
 	_stq = window._stq || [];
-	_stq.push([ 'view', {v:'ext',j:'1:9.2.1',blog:'184717792',post:'166926',tz:'1',srv:'http://nobellprize.org'} ]);
+	_stq.push([ 'view', {v:'ext',j:'1:9.2.1',blog:'184717792',post:'166926',tz:'1',srv:'https://nobellprize.org'} ]);
 	_stq.push([ 'clickTrackerInit', '184717792', '166926' ]);
 </script>
 
